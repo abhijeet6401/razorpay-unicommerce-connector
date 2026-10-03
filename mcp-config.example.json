@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "unicommerce": {
+      "command": "ABSOLUTE_PATH_TO_PYTHON",
+      "args": ["ABSOLUTE_PATH_TO_CONNECTOR_PY"],
+      "env": {"UC_DEMO": "0"}
+    }
+  }
+}

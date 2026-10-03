@@ -1,0 +1,30 @@
+test_secure_url_requirements (test_connector.ConfigurationTests.test_secure_url_requirements) ... ok
+test_authenticated_reads_and_projection (test_connector.IntegrationTests.test_authenticated_reads_and_projection) ... ok
+test_business_failure_and_warning_are_sanitized (test_connector.IntegrationTests.test_business_failure_and_warning_are_sanitized) ... ok
+test_http_date_and_fallback (test_connector.IntegrationTests.test_http_date_and_fallback) ... ok
+test_invalid_refresh_falls_back_to_login (test_connector.IntegrationTests.test_invalid_refresh_falls_back_to_login) ... ok
+test_invalid_upstream_response (test_connector.IntegrationTests.test_invalid_upstream_response) ... ok
+test_inventory_missing_is_not_zero (test_connector.IntegrationTests.test_inventory_missing_is_not_zero) ... ok
+test_inventory_quantities_must_be_numbers (test_connector.IntegrationTests.test_inventory_quantities_must_be_numbers) ... ok
+test_list_summary_does_not_claim_empty_order_items (test_connector.IntegrationTests.test_list_summary_does_not_claim_empty_order_items) ... ok
+test_long_cooldown_is_not_retried_early (test_connector.IntegrationTests.test_long_cooldown_is_not_retried_early) ... ok
+test_mcp_lifecycle_and_tool_error (test_connector.IntegrationTests.test_mcp_lifecycle_and_tool_error) ... ok
+test_pagination_and_filters (test_connector.IntegrationTests.test_pagination_and_filters) ... ok
+test_permanent_errors_not_retried (test_connector.IntegrationTests.test_permanent_errors_not_retried) ... ok
+test_proactive_token_refresh (test_connector.IntegrationTests.test_proactive_token_refresh) ... ok
+test_rate_limit_recovery (test_connector.IntegrationTests.test_rate_limit_recovery) ... ok
+test_redirects_are_blocked (test_connector.IntegrationTests.test_redirects_are_blocked) ... ok
+test_rejected_credentials (test_connector.IntegrationTests.test_rejected_credentials) ... ok
+test_repeated_401_is_bounded (test_connector.IntegrationTests.test_repeated_401_is_bounded) ... ok
+test_retry_budget (test_connector.IntegrationTests.test_retry_budget) ... ok
+test_search_and_empty_results (test_connector.IntegrationTests.test_search_and_empty_results) ... ok
+test_token_refresh_on_401 (test_connector.IntegrationTests.test_token_refresh_on_401) ... ok
+test_transient_server_failure (test_connector.IntegrationTests.test_transient_server_failure) ... ok
+test_transport_failure (test_connector.IntegrationTests.test_transport_failure) ... ok
+test_validation_prevents_network_requests (test_connector.IntegrationTests.test_validation_prevents_network_requests) ... ok
+test_wrong_order_identity_is_rejected (test_connector.IntegrationTests.test_wrong_order_identity_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 19.535s
+
+OK

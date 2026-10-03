@@ -1,0 +1,133 @@
+UNICOMMERCE FICTIONAL DEMO - no live tenant, Agent Studio or language model used
+MCP initialized; discovered 6 read-only tools
+OAuth header login -> injected 401 -> token refresh -> injected 429 -> successful retry
+
+connection_check {}
+{
+  "authenticated": true,
+  "read_access": [
+    "orders"
+  ],
+  "inventory_access": "not_checked"
+}
+
+list_orders {"status": "PROCESSING", "limit": 1}
+{
+  "records": [
+    {
+      "code": "SO-1001",
+      "displayOrderCode": "WEB-1001",
+      "status": "PROCESSING",
+      "channel": "CUSTOM",
+      "created": 1790816400000,
+      "updated": 1790816700000,
+      "displayOrderDateTime": null
+    }
+  ],
+  "offset": 0,
+  "total": 2,
+  "next_offset": 1
+}
+
+list_orders {"status": "PROCESSING", "limit": 1, "offset": 1}
+{
+  "records": [
+    {
+      "code": "SO-1004",
+      "displayOrderCode": "WEB-1004",
+      "status": "PROCESSING",
+      "channel": "CUSTOM",
+      "created": 1790816400000,
+      "updated": 1790816700000,
+      "displayOrderDateTime": null
+    }
+  ],
+  "offset": 1,
+  "total": 2,
+  "next_offset": null
+}
+
+get_order {"code": "SO-1002"}
+{
+  "record": {
+    "code": "SO-1002",
+    "displayOrderCode": "WEB-1002",
+    "status": "CANCELLED",
+    "channel": "CUSTOM",
+    "created": 1790816400000,
+    "updated": 1790816700000,
+    "displayOrderDateTime": null,
+    "items": [
+      {
+        "code": "ITEM-1",
+        "itemSku": "MUG-01",
+        "status": "CREATED",
+        "sellingPrice": 499,
+        "totalPrice": 499
+      }
+    ]
+  }
+}
+
+search_orders {"display_order_code": "WEB-1001"}
+{
+  "records": [
+    {
+      "code": "SO-1001",
+      "displayOrderCode": "WEB-1001",
+      "status": "PROCESSING",
+      "channel": "CUSTOM",
+      "created": 1790816400000,
+      "updated": 1790816700000,
+      "displayOrderDateTime": null
+    }
+  ],
+  "offset": 0,
+  "total": 1,
+  "next_offset": null
+}
+
+get_inventory {"sku": "MUG-01"}
+{
+  "facility": "DEMO",
+  "records": [
+    {
+      "itemTypeSKU": "MUG-01",
+      "inventory": 8,
+      "openSale": 2,
+      "openPurchase": 0,
+      "putawayPending": 0,
+      "inventoryBlocked": 0
+    }
+  ],
+  "missing_skus": [],
+  "observed_at": "2026-10-02T12:55:12.186989+00:00"
+}
+
+list_inventory {"skus": ["TOTE-01", "UNKNOWN-SKU"]}
+{
+  "facility": "DEMO",
+  "records": [
+    {
+      "itemTypeSKU": "TOTE-01",
+      "inventory": 0,
+      "openSale": 3,
+      "openPurchase": 0,
+      "putawayPending": 0,
+      "inventoryBlocked": 0
+    }
+  ],
+  "missing_skus": [
+    "UNKNOWN-SKU"
+  ],
+  "observed_at": "2026-10-02T12:55:12.200089+00:00"
+}
+
+get_order {"code": "MISSING-ORDER"}
+{
+  "code": "merchant_rejected",
+  "message": "Uniware rejected the read; check filters, code and facility access.",
+  "retry_after_seconds": null
+}
+
+PASS: OAuth, refresh, facility scope, pagination, search, inventory, privacy and errors
